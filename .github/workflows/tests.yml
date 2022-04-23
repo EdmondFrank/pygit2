@@ -58,6 +58,9 @@ jobs:
           apt-get update -q -y
           apt-get install -q -y cmake libssl-dev python3-dev python3-venv wget
         run: |
+          mount
+          pwd
+          ls -l
           LIBSSH2_VERSION=1.10.0 LIBGIT2_VERSION=1.4.3 /bin/sh build.sh test
 
   s390x:
