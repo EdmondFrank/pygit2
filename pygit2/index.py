@@ -176,6 +176,12 @@ class Index:
         err = C.git_index_remove(self._index, to_bytes(path), level)
         check_error(err, io=True)
 
+    def remove(self, path):
+        """Remove an entry by path the Index.
+        """
+        err = C.git_index_remove_bypath(self._index, to_bytes(path))
+        check_error(err, io=True)
+
     def remove_all(self, pathspecs):
         """Remove all index entries matching pathspecs.
         """
